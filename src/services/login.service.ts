@@ -1,7 +1,7 @@
 import ErrorHandle from '../errors/classError';
 import ILogin from '../interfaces/login.interface';
 import usersModel from '../models/users.model';
-import generateJWTToken from '../utils/JWTToken';
+import { generateJWTToken } from '../utils/JWTToken';
 
 const verifyLogin = async (login: ILogin) => {
   const users = await usersModel.getAll(); 
