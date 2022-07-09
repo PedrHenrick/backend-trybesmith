@@ -1,7 +1,7 @@
 interface IOrders {
-  id: number,
+  id?: number,
   userId: number,
-  productIds: number[],
+  productIds?: number[],
 }
 
 export default IOrders;
