@@ -15,7 +15,15 @@ const add = async ({ name, amount }: IProducts): Promise<ResultSetHeader> => {
   return result;
 };
 
+const updateItem = async (id: number, orderId: number): Promise<ResultSetHeader> => {
+  const query = `UPDATE Trybesmith.Products 
+  SET orderId = ? WHERE id = ?`;
+  const [row] = await connection.execute<ResultSetHeader>(query, [orderId, id]);
+  return row;
+};
+
 export default {
   getAll,
   add,
+  updateItem,
 };
